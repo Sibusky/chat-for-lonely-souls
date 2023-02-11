@@ -2,10 +2,10 @@ import React from 'react';
 import './AboutMe.css';
 import aboutmePhoto from '../../../images/aboutme-photo.jpg';
 
-export default function AboutMe() {
+export default function AboutMe({ scroll }) {
   return (
     <section className='aboutme'>
-      <h2 className='aboutme__title'>Author</h2>
+      <h2 className='aboutme__title' ref={scroll}>Author</h2>
       <div className='aboutme__info-container'>
         <div className='aboutme__info-text-container'>
           <h3 className='aboutme__info-name'>Aleksei Smirnov</h3>

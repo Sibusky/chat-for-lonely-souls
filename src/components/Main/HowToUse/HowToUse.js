@@ -1,8 +1,9 @@
 import React from 'react';
 import './HowToUse.css';
 import ChatScreenshot from '../../../images/Chat-screenshot.png';
+import { Link } from 'react-router-dom';
 
-export default function HowToUse() {
+export default function HowToUse({ scrollHendler }) {
   return (
     <section className='howtouse'>
       <div className='howtouse__container'>
@@ -21,15 +22,20 @@ export default function HowToUse() {
               2. On each press the Button to introduce yourself and start self
               conversation
             </p>
-            <button className='howtouse__container-button button'>
-              Button
-            </button>
+            <Link className='howtouse__container-button-link' to='/login'>
+              <button className='howtouse__container-button button'>
+                Button
+              </button>
+            </Link>
           </div>
           <div className='howtouse__container-know-better'>
             <p className='howtouse__container-know-better-text'>
               or stick around and get to know me better
             </p>
-            <button className='howtouse__container-know-better-button button'>
+            <button
+              className='howtouse__container-know-better-button button'
+              onClick={scrollHendler}
+            >
               Know me better
             </button>
           </div>
