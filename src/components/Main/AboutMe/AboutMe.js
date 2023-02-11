@@ -5,7 +5,7 @@ import aboutmePhoto from '../../../images/aboutme-photo.jpg';
 export default function AboutMe() {
   return (
     <section className='aboutme'>
-      <h2 className='aboutme__title'>Creator</h2>
+      <h2 className='aboutme__title'>Author</h2>
       <div className='aboutme__info-container'>
         <div className='aboutme__info-text-container'>
           <h3 className='aboutme__info-name'>Aleksei Smirnov</h3>
