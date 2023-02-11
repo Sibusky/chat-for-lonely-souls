@@ -1,10 +1,13 @@
-import React from 'react'
-import './Layout.css'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Footer from '../Footer/Footer';
+import './Layout.css';
 
 export default function Layout() {
   return (
-    <div>
-        
+    <div className='layout'>
+      <Outlet />
+      <Footer />
     </div>
-  )
+  );
 }

@@ -1,10 +1,15 @@
-import React from 'react'
-import './Main.css'
+import React from 'react';
+import HowToUse from './HowToUse/HowToUse';
+import AboutMe from './AboutMe/AboutMe';
+import './Main.css';
+import Portfolio from './Portfolio/Portfolio';
 
 export default function Main() {
   return (
-    <div>
-        
-    </div>
-  )
+    <main className='main'>
+      <HowToUse />
+      <AboutMe />
+      <Portfolio />
+    </main>
+  );
 }
