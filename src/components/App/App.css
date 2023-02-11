@@ -1,8 +1,21 @@
+html {
+  height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.body {
+  min-height: 100%;
+}
+
 .App {
   background-color: #fafafa;
   min-width: 300px;
   max-width: 1440px;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
 /* Общие стили для переиспользуемых элементов  */
