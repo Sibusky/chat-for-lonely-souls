@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from '../Layout/Layout';
 import Main from '../Main/Main';
 import Login from '../Login/Login';
-import Chat from '../Chat/Chat';
 import PageNotFound from '../PageNotFound/PageNotFound';
+import ChatPage from '../ChatPage/ChatPage';
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<Main />} />
             <Route path='login' element={<Login />} />
-            <Route path='chat' element={<Chat />} />
           </Route>
+          <Route path='chat' element={<ChatPage />} />
           <Route path='*' element={<PageNotFound />} />
         </Route>
       </Routes>

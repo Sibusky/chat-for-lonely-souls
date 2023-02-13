@@ -26,7 +26,7 @@ export default function Login() {
                   id='login__input-name'
                   type='text'
                   placeholder=''
-                  name='password'
+                  name='name'
                   minLength='2'
                   maxLength='20'
                   //   onChange={handleChange}
@@ -40,24 +40,25 @@ export default function Login() {
               <li className='login__input-item'>
                 <label
                   className='login__input-label'
-                  htmlFor='login__input-email'
+                  htmlFor='login__input-about'
                 >
-                  E-mail
+                  About
                 </label>
                 <input
                   className='login__input'
                   //   readOnly={isFetching && true}
-                  id='login__input-email'
-                  type='email'
+                  id='login__input-about'
+                  type='text'
                   placeholder=''
-                  pattern='^.+@.+\..+$'
-                  name='email'
+                  name='name'
+                  minLength='2'
+                  maxLength='30'
                   //   onChange={handleChange}
-                  //   value={values.email ? values.email : ''}
+                  //   value={values.password ? values.password : ''}
                   required
                 />
-                {/* <span id='error-login-email' className='login__error'>
-                  {errors.email}
+                {/* <span id='error-login-password' className='login__error'>
+                  {errors.password}
                 </span> */}
               </li>
               <li className='login__input-item'>

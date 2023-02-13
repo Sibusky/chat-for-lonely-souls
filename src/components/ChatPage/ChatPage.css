@@ -1,0 +1,5 @@
+.chat-page {
+    display: grid;
+    grid-template-columns: 24% auto 24%;
+    height: 100vh;
+}
