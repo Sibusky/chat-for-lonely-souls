@@ -2,7 +2,7 @@ import React from 'react';
 import './Users.css';
 import UsersList from './UsersList/UsersList';
 
-export default function Users() {
+export default function Users({ users }) {
   return (
     <section className='users'>
       <div className='users__container'>
@@ -16,7 +16,7 @@ export default function Users() {
             name='users__search-input'
           />
         </form>
-        <UsersList />
+        <UsersList users={users}/>
       </div>
     </section>
   );

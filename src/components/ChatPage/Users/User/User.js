@@ -9,7 +9,7 @@ export default function User({ name, about, avatar }) {
         src={
           avatar
             ? avatar
-            : 'https://api.nomoreparties.co/uploads/zagruzhennoe_3_312a12853b.jpeg'
+            : './default-user-photo.png'
         }
         alt='avatar of user'
       />

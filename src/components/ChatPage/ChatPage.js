@@ -4,12 +4,12 @@ import './ChatPage.css'
 import UserInfo from './UserInfo/UserInfo'
 import Users from './Users/Users'
 
-export default function ChatPage() {
+export default function ChatPage({ users }) {
   return (
     <main className='chat-page'>
-        <Users />
+        <Users users={users}/>
         <Chat />
-        <UserInfo />
+        <UserInfo users={users}/>
     </main>
   )
 }
