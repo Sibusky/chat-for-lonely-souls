@@ -1,0 +1,29 @@
+.chat__message-item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 70%;
+}
+
+.chat__message-user-avatar {
+    min-width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chat__message-item-text {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-rendering: optimizeLegibility;
+    text-decoration: none;
+    letter-spacing: 0;
+    margin: 0 0 0 0;
+    padding: 0;
+    color: #000;
+}

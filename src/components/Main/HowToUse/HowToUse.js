@@ -16,7 +16,7 @@ export default function HowToUse({ scrollHendler }) {
           <div className='howtouse__container-instructions'>
             <h1 className='howtouse__container-title'>Lonely Soul Chat</h1>
             <p className='howtouse__container-instruction'>
-              1. Open as much tubs with this app in your browser as you want
+              1. Open as much tabs with this app in your browser as you want
             </p>
             <p className='howtouse__container-instruction'>
               2. On each press the Button to introduce yourself and start self

@@ -10,9 +10,12 @@ export default function UserInfo({ users }) {
         <AboutUser users={users} />
       </div>
       <div className='user-info__buttons'>
-      <button className='user-info__button-edit user-info__button button'>Edit</button>
-      <button className='user-info__button-logout user-info__button button'>Logout</button>
-
+        <button className='user-info__button-edit user-info__button button'>
+          Edit
+        </button>
+        <button className='user-info__button-logout user-info__button button'>
+          Logout
+        </button>
       </div>
     </section>
   );
