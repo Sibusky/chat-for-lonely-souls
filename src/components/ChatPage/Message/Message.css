@@ -1,29 +1,99 @@
 .chat__message-item {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    width: 70%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0;
+  padding: 10px 0 10px 0;
+}
+
+.chat__message-item-my {
+  flex-direction: row-reverse;
+  align-self: flex-end;
 }
 
 .chat__message-user-avatar {
-    min-width: 40px;
-    height: 40px;
-    background-position: center;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    border-radius: 50%;
+  min-width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.chat__message-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  background-color: #dedede;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  padding: 10px 14px;
+  margin: 0;
+}
+
+.chat__message-text-container-my {
+  align-items: flex-end;
+  background-color: #2a5cd4;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 0;
+}
+
+.chat__message-sender {
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 16px;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  letter-spacing: 0;
+  margin: 0 0 0 0;
+  padding: 0;
+  color: #000;
+}
+
+.chat__message-sender-my {
+  color: #e9e9e9;
+}
+
+.chat__message-time {
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  letter-spacing: 0;
+  margin: 5px 0 0 0;
+  padding: 0;
+  color: #000;
+}
+
+.chat__message-time-my {
+  color: #e9e9e9;
 }
 
 .chat__message-item-text {
-    font-family: 'Inter', Arial, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    text-rendering: optimizeLegibility;
-    text-decoration: none;
-    letter-spacing: 0;
-    margin: 0 0 0 0;
-    padding: 0;
-    color: #000;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  letter-spacing: 0;
+  margin: 3px 0 0 0;
+  padding: 0;
+  color: #000;
+}
+
+.chat__message-item-text-my {
+  color: #e9e9e9;
 }

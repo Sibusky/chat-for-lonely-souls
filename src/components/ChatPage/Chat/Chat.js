@@ -10,8 +10,9 @@ export default function Chat({ users, messages }) {
         <div className='chat__messages-container'>
           <ul className='chat__message-list'>
             {messages.map((message, index) => (
-              <Message key={message.time} users={users} message={message.text} />
+              <Message key={message.time} users={users} message={message.text} time={message.time} />
             ))}
+            <Message users={users} message={messages[0].text} time={messages[0].time}/>
           </ul>
         </div>
         <form className='chat__form'>
