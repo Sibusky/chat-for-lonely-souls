@@ -1,16 +1,29 @@
 import React from 'react';
+import { Link, Navigate, useLocation } from 'react-router-dom';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { useFormWithValidation } from '../../hooks/useFormWithValidation';
 
-export default function Login() {
+export default function Login({ handleLogin, isLoggedIn }) {
+  const [values, errors, isValid, handleChange] = useFormWithValidation();
+
+  // Если вход выполнен, то перекидываю на страницу с чатом
+  let location = useLocation();
+  if (isLoggedIn) {
+    return <Navigate to='/chat' state={{ from: location }} replace />;
+  }
+
+  // Обработчик формы
+  function handleSubmit(e) {
+    e.preventDefault();
+    const { name, about, avatar } = values;
+    handleLogin({ name, about, avatar });
+  }
+
   return (
     <main className='login'>
       <div className='login__container'>
         <h2 className='login__welcome'>Welcome!</h2>
-        <form
-          className='login__form'
-          //  onSubmit={handleSubmit}
-        >
+        <form className='login__form' onSubmit={handleSubmit}>
           <fieldset className='login__form-fieldset'>
             <ul className='login__input-list'>
               <li className='login__input-item'>
@@ -22,20 +35,16 @@ export default function Login() {
                 </label>
                 <input
                   className='login__input'
-                  //   readOnly={isFetching && true}
                   id='login__input-name'
                   type='text'
                   placeholder=''
                   name='name'
                   minLength='2'
-                  maxLength='20'
-                  //   onChange={handleChange}
-                  //   value={values.password ? values.password : ''}
+                  maxLength='25'
+                  onChange={handleChange}
+                  value={values.name ? values.name : ''}
                   required
                 />
-                {/* <span id='error-login-password' className='login__error'>
-                  {errors.password}
-                </span> */}
               </li>
               <li className='login__input-item'>
                 <label
@@ -46,20 +55,16 @@ export default function Login() {
                 </label>
                 <input
                   className='login__input'
-                  //   readOnly={isFetching && true}
                   id='login__input-about'
                   type='text'
                   placeholder=''
-                  name='name'
+                  name='about'
                   minLength='2'
-                  maxLength='30'
-                  //   onChange={handleChange}
-                  //   value={values.password ? values.password : ''}
+                  maxLength='50'
+                  onChange={handleChange}
+                  value={values.about ? values.about : ''}
                   required
                 />
-                {/* <span id='error-login-password' className='login__error'>
-                  {errors.password}
-                </span> */}
               </li>
               <li className='login__input-item'>
                 <label
@@ -70,26 +75,17 @@ export default function Login() {
                 </label>
                 <input
                   className='login__input'
-                  //   readOnly={isFetching && true}
                   id='login__input-avatar'
                   type='url'
                   placeholder=''
                   name='avatar'
-                  //   onChange={handleChange}
-                  //   value={values.password ? values.password : ''}
-                  required
+                  onChange={handleChange}
+                  value={values.avatar ? values.avatar : ''}
                 />
-                {/* <span id='error-login-password' className='login__error'>
-                  {errors.password}
-                </span> */}
               </li>
             </ul>
           </fieldset>
-          <button
-            // disabled={!isValid || isFetching ? true : false}
-            className='login__submit-btn button'
-            type='submit'
-          >
+          <button className='login__submit-btn button' type='submit'>
             Login
           </button>
         </form>

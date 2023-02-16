@@ -31,6 +31,21 @@
   text-align: center;
 }
 
+.user-info__container-select-user {
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  letter-spacing: 0;
+  margin: 74px auto 0;
+  padding: 0;
+  color: #000;
+  text-align: center;
+}
+
 .user-info__buttons {
   display: flex;
   flex-direction: column;

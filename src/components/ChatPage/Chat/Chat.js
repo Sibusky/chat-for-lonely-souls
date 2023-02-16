@@ -2,28 +2,55 @@ import React from 'react';
 import Message from '../Message/Message';
 import './Chat.css';
 
-export default function Chat({ users, messages }) {
+export default function Chat({
+  messages,
+  handleMessageInput,
+  inputValue,
+  handleMessageSubmit,
+  keyListener,
+}) {
   return (
     <section className='chat'>
       <div className='chat__container'>
         <h1 className='chat__title'>Lonely Soul Chat</h1>
         <div className='chat__messages-container'>
           <ul className='chat__message-list'>
-            {messages.map((message, index) => (
-              <Message key={message.time} users={users} message={message.text} time={message.time} />
-            ))}
-            <Message users={users} message={messages[0].text} time={messages[0].time}/>
+            {!messages ? (
+              <p className='chat__messages-null-text'>
+                Write something in the field below to start conversation
+              </p>
+            ) : (
+              messages.map((message) => (
+                <Message key={message.id} message={message} />
+              ))
+            )}
           </ul>
         </div>
-        <form className='chat__form'>
+        <form className='chat__form' onSubmit={(e) => handleMessageSubmit(e)}>
           <textarea
             className='chat__input'
             placeholder='Write something'
             type='textarea'
-            contenteditable='true'
             rows={3}
+            onChange={(e) => handleMessageInput(e)}
+            value={inputValue}
+            wrap='soft'
+            cols='10'
+            onKeyUp={(e) => keyListener(e)}
           />
-          <button className='chat__button button' type='submit'></button>
+          {/* <input
+            className='chat__input'
+            placeholder='Write something'
+            type='textarea'
+            rows={3}
+            onChange={(e) => handleMessageInput(e)}
+            value={inputValue}
+          /> */}
+          <button
+            className='chat__button button'
+            type='submit'
+            // onClick={(e) => handleMessageSubmit(e)}
+          ></button>
         </form>
       </div>
     </section>
