@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A chat for one browser",
   "private": true,
-  "homepage": "https://sibusky.github.io/chat-for-lonely-souls/",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
