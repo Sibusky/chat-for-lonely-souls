@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './Message.css';
-import { CurrentUserContext } from '../../../context/CurrentUserContext';
+import { CurrentUserContext } from '../../../../context/CurrentUserContext';
 
 export default function Message({ message }) {
   // Подписываюсь на контекст пользователя

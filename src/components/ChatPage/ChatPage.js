@@ -13,6 +13,7 @@ export default function ChatPage({
   keyListener,
   handlePopupOpen,
   windowSize,
+  handleLogout,
 }) {
   const [selectedUser, setSelectedUser] = useState({
     name: '',
@@ -45,6 +46,7 @@ export default function ChatPage({
           <UserInfo
             selectedUser={selectedUser}
             handlePopupOpen={handlePopupOpen}
+            handleLogout={handleLogout}
           />
         </div>
       ) : (
@@ -53,6 +55,7 @@ export default function ChatPage({
           <UserInfo
             selectedUser={selectedUser}
             handlePopupOpen={handlePopupOpen}
+            handleLogout={handleLogout}
           />
           <Chat
             users={users}

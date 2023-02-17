@@ -3,7 +3,11 @@ import AboutUser from './AboutUser/AboutUser';
 import './UserInfo.css';
 import { CurrentUserContext } from '../../../context/CurrentUserContext';
 
-export default function UserInfo({ selectedUser, handlePopupOpen }) {
+export default function UserInfo({
+  selectedUser,
+  handlePopupOpen,
+  handleLogout,
+}) {
   // Подписываюсь на контекст пользователя
   const { currentUser } = useContext(CurrentUserContext);
 
@@ -19,10 +23,16 @@ export default function UserInfo({ selectedUser, handlePopupOpen }) {
       </div>
       {selectedUser.id === currentUser.id && (
         <div className='user-info__buttons'>
-          <button className='user-info__button-edit user-info__button button' onClick={() => handlePopupOpen()}>
+          <button
+            className='user-info__button-edit user-info__button button'
+            onClick={() => handlePopupOpen()}
+          >
             Edit
           </button>
-          <button className='user-info__button-logout user-info__button button'>
+          <button
+            className='user-info__button-logout user-info__button button'
+            onClick={() => handleLogout()}
+          >
             Logout
           </button>
         </div>

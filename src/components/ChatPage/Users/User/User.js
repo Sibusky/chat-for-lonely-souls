@@ -17,7 +17,7 @@ export default function User({ id, name, about, avatar, handleUserClick }) {
       />
       <div className='users__list-item-description'>
         <p className='users__list-item-name'>
-          {currentUser.id === id ? `${name} (you)` : name}
+          {currentUser.id === id ? `(you) ${name}` : name}
         </p>
         <p className='users__list-item-about'>{about}</p>
       </div>

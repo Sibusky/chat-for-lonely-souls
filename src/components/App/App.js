@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
 import debounce from 'lodash.debounce';
@@ -20,21 +20,22 @@ function App() {
   const [popupIsOpen, setPopupIsOpen] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
+  // let location = useLocation();
 
-  // let location = useLocation();  
+  let navigate = useNavigate();
 
-    // Отслеживаю ширину окна
-    const handleResize = debounce(() => {
-      setWindowSize(window.innerWidth);
-    }, 100);
-  
-    // Устанавливаю слушатель событий на размер окна
-    useEffect(() => {
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, [handleResize]);
+  // Отслеживаю ширину окна
+  const handleResize = debounce(() => {
+    setWindowSize(window.innerWidth);
+  }, 100);
+
+  // Устанавливаю слушатель событий на размер окна
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [handleResize]);
 
   // Получаю список пользователей, которые уже в чате
   useEffect(() => {
@@ -54,7 +55,7 @@ function App() {
       });
       setIsLoggedIn(true);
     } else {
-      handleLogOut();
+      handleLogout();
     }
   }, []);
 
@@ -101,19 +102,6 @@ function App() {
     }
     // setUsers(JSON.parse(localStorage.getItem('users')));
     setUsers(JSON.parse(localStorage.getItem('users')));
-  };
-
-  // Функция выхода
-  const handleLogOut = () => {
-    sessionStorage.clear();
-    localStorage.removeItem(`user ${sessionStorage.getItem('id')}`);
-    setIsLoggedIn(false);
-    setCurrentUser({
-      id: '',
-      name: '',
-      about: '',
-      avatar: '',
-    });
   };
 
   // Обработчик ввода текста в инпут сообщений
@@ -201,7 +189,7 @@ function App() {
   }, []);
 
   const handleEditProfileSubmit = (name, about, avatar) => {
-    console.log(name, about, avatar, 'name, about, avatar')
+    console.log(name, about, avatar, 'name, about, avatar');
     setCurrentUser({
       id: currentUser.id,
       name: name,
@@ -209,7 +197,7 @@ function App() {
       avatar: avatar,
     });
 
-    console.log(currentUser, 'currentUser')
+    console.log(currentUser, 'currentUser');
 
     let users = JSON.parse(localStorage.getItem('users'));
 
@@ -233,15 +221,26 @@ function App() {
     sessionStorage.setItem('about', about);
     sessionStorage.setItem('avatar', avatar);
 
-    console.log(JSON.parse(localStorage.getItem('users')), 'localStorage')
-    console.log(sessionStorage, 'sessionStorage')
-
+    console.log(JSON.parse(localStorage.getItem('users')), 'localStorage');
+    console.log(sessionStorage, 'sessionStorage');
 
     handleClosePopup();
     // location.href=location.href;
     handleCheckLogin();
   };
   // console.log(currentUser);
+
+  const handleLogout = () => {
+    setCurrentUser({
+      id: '',
+      name: '',
+      about: '',
+      avatar: '',
+    });
+    sessionStorage.clear();
+    setIsLoggedIn(false);
+    navigate('/');
+  };
 
   return (
     <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
@@ -272,6 +271,7 @@ function App() {
                     keyListener={keyListener}
                     handlePopupOpen={handlePopupOpen}
                     windowSize={windowSize}
+                    handleLogout={handleLogout}
                   />
                 </RequireAuth>
               }
@@ -291,38 +291,3 @@ function App() {
 }
 
 export default App;
-
-// const users = [
-//   {
-//     name: 'Aleksei Smirnov',
-//     about: 'JS Developer',
-//     avatar:
-//       'https://bitfilms.smirnov.nomoredomains.icu/static/media/student-photo.cad54e2754cc673747f1.jpg',
-//   },
-//   {
-//     name: 'Alex',
-//     about: 'Student',
-//     avatar:
-//       'https://sun9-23.userapi.com/impg/EQHWxW_0YhmYb-2j87fzwb-OU-k9HV5MMAxaOA/SKd829vutHw.jpg?size=1280x1280&quality=96&sign=b35e3a8ed01f21c801a010b657d9a56d&type=album',
-//   },
-//   {
-//     name: 'Smirnoff The Electrician',
-//     about: 'Electrician',
-//     avatar:
-//       'https://sun9-7.userapi.com/impg/c855424/v855424919/250d68/yLixoVlbHhU.jpg?size=1045x1045&quality=96&sign=8b3e6021281d710907eb9f716e00418c&type=album',
-//   },
-//   {
-//     name: 'Dasha',
-//     about: 'Female alter ego',
-//     avatar:
-//       'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=461&q=80',
-//   },
-//   {
-//     name: 'User without Avatar',
-//     about: 'Male alter ego',
-//   },
-//   {
-//     name: 'User without Avatar',
-//     about: 'Male alter ego',
-//   },
-// ];

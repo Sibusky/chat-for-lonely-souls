@@ -1,5 +1,5 @@
 import React from 'react';
-import Message from '../Message/Message';
+import Message from './Message/Message';
 import './Chat.css';
 
 export default function Chat({
