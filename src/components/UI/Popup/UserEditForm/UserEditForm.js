@@ -3,8 +3,7 @@ import './UserEditForm.css';
 import { useFormWithValidation } from '../../../../hooks/useFormWithValidation';
 
 export default function UserEditForm({ handleSubmit }) {
-  const [values, errors, isValid, handleChange, resetForm] =
-    useFormWithValidation();
+  const { values, handleChange, resetForm } = useFormWithValidation();
 
   return (
     <form

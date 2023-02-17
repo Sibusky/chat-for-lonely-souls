@@ -1,16 +1,19 @@
 import React from 'react';
+// import { Helmet } from 'react-helmet';
 import { Link, Navigate, useLocation } from 'react-router-dom';
 import './Login.css';
 import { useFormWithValidation } from '../../hooks/useFormWithValidation';
 
 export default function Login({ handleLogin, isLoggedIn }) {
-  const [values, errors, isValid, handleChange] = useFormWithValidation();
+  const {values, handleChange} = useFormWithValidation();
 
   // Если вход выполнен, то перекидываю на страницу с чатом
   let location = useLocation();
   if (isLoggedIn) {
     return <Navigate to='/chat' state={{ from: location }} replace />;
   }
+
+  console.log(isLoggedIn, 'isLoggedIn in login');
 
   // Обработчик формы
   function handleSubmit(e) {
@@ -21,6 +24,9 @@ export default function Login({ handleLogin, isLoggedIn }) {
 
   return (
     <main className='login'>
+      {/* <Helmet>
+        <title>Login</title>
+      </Helmet> */}
       <div className='login__container'>
         <h2 className='login__welcome'>Welcome!</h2>
         <form className='login__form' onSubmit={handleSubmit}>

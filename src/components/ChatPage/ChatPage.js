@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { Helmet } from 'react-helmet';
 import Chat from './Chat/Chat';
 import './ChatPage.css';
 import UserInfo from './UserInfo/UserInfo';
@@ -32,6 +33,9 @@ export default function ChatPage({
 
   return (
     <main className='chat-page'>
+      {/* <Helmet>
+        <title>{sessionStorage.getItem('name')}</title>
+      </Helmet> */}
       {windowSize > 500 ? (
         <div className='chat-page__container'>
           <Users users={users} handleUserClick={handleUserClick} />

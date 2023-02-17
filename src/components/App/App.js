@@ -44,6 +44,19 @@ function App() {
     // console.log(users, 'users in useEffect');
   }, [setUsers]);
 
+  // Функция выхода пользователя
+  const handleLogout = useCallback(() => {
+    setCurrentUser({
+      id: '',
+      name: '',
+      about: '',
+      avatar: '',
+    });
+    sessionStorage.clear();
+    setIsLoggedIn(false);
+    navigate('/');
+  }, [navigate]);
+
   // Функция проверки логина
   const handleCheckLogin = useCallback(() => {
     if (sessionStorage.getItem('id')) {
@@ -229,18 +242,6 @@ function App() {
     handleCheckLogin();
   };
   // console.log(currentUser);
-
-  const handleLogout = () => {
-    setCurrentUser({
-      id: '',
-      name: '',
-      about: '',
-      avatar: '',
-    });
-    sessionStorage.clear();
-    setIsLoggedIn(false);
-    navigate('/');
-  };
 
   return (
     <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
