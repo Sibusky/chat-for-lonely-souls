@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/chat-for-lonely-souls/static/css/main.4bd834f0.css",
-    "main.js": "/chat-for-lonely-souls/static/js/main.81607d7c.js",
-    "static/media/Inter-Medium.woff": "/chat-for-lonely-souls/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
-    "static/media/aboutme-photo.jpg": "/chat-for-lonely-souls/static/media/aboutme-photo.cad54e2754cc673747f1.jpg",
-    "static/media/Inter-Black.woff": "/chat-for-lonely-souls/static/media/Inter-Black.7bb6234314ccc72c942a.woff",
-    "static/media/Inter-Regular.woff": "/chat-for-lonely-souls/static/media/Inter-Regular.e148c4a1158f8cee8285.woff",
-    "static/media/Inter-Medium.woff2": "/chat-for-lonely-souls/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
-    "static/media/Inter-Black.woff2": "/chat-for-lonely-souls/static/media/Inter-Black.768169b1912340d378ac.woff2",
-    "static/media/Inter-Regular.woff2": "/chat-for-lonely-souls/static/media/Inter-Regular.26a30a5f1103393aac70.woff2",
-    "static/media/Chat-screenshot.png": "/chat-for-lonely-souls/static/media/Chat-screenshot.9201c9f5cf2e4ef35674.png",
-    "static/media/send-message-btn.png": "/chat-for-lonely-souls/static/media/send-message-btn.c61654823080eecc2400.png",
-    "index.html": "/chat-for-lonely-souls/index.html",
-    "static/media/arrow-link.svg": "/chat-for-lonely-souls/static/media/arrow-link.093d837f03fdca8fb146.svg",
-    "main.4bd834f0.css.map": "/chat-for-lonely-souls/static/css/main.4bd834f0.css.map",
-    "main.81607d7c.js.map": "/chat-for-lonely-souls/static/js/main.81607d7c.js.map"
+    "main.css": "./static/css/main.6520de3f.css",
+    "main.js": "./static/js/main.ec2d78b8.js",
+    "static/media/Inter-Medium.woff": "./static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/aboutme-photo.jpg": "./static/media/aboutme-photo.cad54e2754cc673747f1.jpg",
+    "static/media/Inter-Black.woff": "./static/media/Inter-Black.7bb6234314ccc72c942a.woff",
+    "static/media/Inter-Regular.woff": "./static/media/Inter-Regular.e148c4a1158f8cee8285.woff",
+    "static/media/Inter-Medium.woff2": "./static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "./static/media/Inter-Black.768169b1912340d378ac.woff2",
+    "static/media/Inter-Regular.woff2": "./static/media/Inter-Regular.26a30a5f1103393aac70.woff2",
+    "static/media/Chat-screenshot.png": "./static/media/Chat-screenshot.9201c9f5cf2e4ef35674.png",
+    "static/media/send-message-btn.png": "./static/media/send-message-btn.c61654823080eecc2400.png",
+    "index.html": "./index.html",
+    "static/media/arrow-link.svg": "./static/media/arrow-link.093d837f03fdca8fb146.svg",
+    "main.6520de3f.css.map": "./static/css/main.6520de3f.css.map",
+    "main.ec2d78b8.js.map": "./static/js/main.ec2d78b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.4bd834f0.css",
-    "static/js/main.81607d7c.js"
+    "static/css/main.6520de3f.css",
+    "static/js/main.ec2d78b8.js"
   ]
 }
