@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
+import debounce from 'lodash.debounce';
 import Layout from '../Layout/Layout';
 import Main from '../Main/Main';
 import Login from '../Login/Login';
@@ -17,8 +18,23 @@ function App() {
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState([]);
   const [popupIsOpen, setPopupIsOpen] = useState(false);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
-  let location = useLocation();
+
+  // let location = useLocation();  
+
+    // Отслеживаю ширину окна
+    const handleResize = debounce(() => {
+      setWindowSize(window.innerWidth);
+    }, 100);
+  
+    // Устанавливаю слушатель событий на размер окна
+    useEffect(() => {
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, [handleResize]);
 
   // Получаю список пользователей, которые уже в чате
   useEffect(() => {
@@ -255,6 +271,7 @@ function App() {
                     handleMessageSubmit={handleMessageSubmit}
                     keyListener={keyListener}
                     handlePopupOpen={handlePopupOpen}
+                    windowSize={windowSize}
                   />
                 </RequireAuth>
               }

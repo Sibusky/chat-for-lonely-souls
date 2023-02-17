@@ -28,7 +28,7 @@ export default function UserEditForm({ handleSubmit }) {
               placeholder=''
               name='name'
               minLength='2'
-              maxLength='25'
+              maxLength='20'
               onChange={handleChange}
               value={values.name ? values.name : ''}
               required
@@ -45,7 +45,7 @@ export default function UserEditForm({ handleSubmit }) {
               placeholder=''
               name='about'
               minLength='2'
-              maxLength='50'
+              maxLength='30'
               onChange={handleChange}
               value={values.about ? values.about : ''}
               required

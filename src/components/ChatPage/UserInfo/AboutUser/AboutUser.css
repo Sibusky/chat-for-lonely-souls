@@ -48,6 +48,8 @@
   color: #000;
   max-width: 100%;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-info__about {
@@ -64,6 +66,8 @@
   color: #000;
   max-width: 100%;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 0;
   margin: 7px 0 0 0;
 }

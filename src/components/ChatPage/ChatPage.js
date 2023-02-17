@@ -12,6 +12,7 @@ export default function ChatPage({
   handleMessageSubmit,
   keyListener,
   handlePopupOpen,
+  windowSize,
 }) {
   const [selectedUser, setSelectedUser] = useState({
     name: '',
@@ -30,16 +31,39 @@ export default function ChatPage({
 
   return (
     <main className='chat-page'>
-      <Users users={users} handleUserClick={handleUserClick} />
-      <Chat
-        users={users}
-        messages={messages}
-        handleMessageInput={handleMessageInput}
-        inputValue={inputValue}
-        handleMessageSubmit={handleMessageSubmit}
-        keyListener={keyListener}
-      />
-      <UserInfo selectedUser={selectedUser} handlePopupOpen={handlePopupOpen} />
+      {windowSize > 500 ? (
+        <div className='chat-page__container'>
+          <Users users={users} handleUserClick={handleUserClick} />
+          <Chat
+            users={users}
+            messages={messages}
+            handleMessageInput={handleMessageInput}
+            inputValue={inputValue}
+            handleMessageSubmit={handleMessageSubmit}
+            keyListener={keyListener}
+          />
+          <UserInfo
+            selectedUser={selectedUser}
+            handlePopupOpen={handlePopupOpen}
+          />
+        </div>
+      ) : (
+        <div className='chat-page__container'>
+          <Users users={users} handleUserClick={handleUserClick} />
+          <UserInfo
+            selectedUser={selectedUser}
+            handlePopupOpen={handlePopupOpen}
+          />
+          <Chat
+            users={users}
+            messages={messages}
+            handleMessageInput={handleMessageInput}
+            inputValue={inputValue}
+            handleMessageSubmit={handleMessageSubmit}
+            keyListener={keyListener}
+          />
+        </div>
+      )}
     </main>
   );
 }
