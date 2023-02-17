@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Sibusky/chat-for-lonely-souls/static/css/main.38615a14.css",
+    "main.js": "/Sibusky/chat-for-lonely-souls/static/js/main.41f10e25.js",
+    "static/media/Inter-Medium.woff": "/Sibusky/chat-for-lonely-souls/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/aboutme-photo.jpg": "/Sibusky/chat-for-lonely-souls/static/media/aboutme-photo.cad54e2754cc673747f1.jpg",
+    "static/media/Inter-Black.woff": "/Sibusky/chat-for-lonely-souls/static/media/Inter-Black.7bb6234314ccc72c942a.woff",
+    "static/media/Inter-Regular.woff": "/Sibusky/chat-for-lonely-souls/static/media/Inter-Regular.e148c4a1158f8cee8285.woff",
+    "static/media/Inter-Medium.woff2": "/Sibusky/chat-for-lonely-souls/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "/Sibusky/chat-for-lonely-souls/static/media/Inter-Black.768169b1912340d378ac.woff2",
+    "static/media/Inter-Regular.woff2": "/Sibusky/chat-for-lonely-souls/static/media/Inter-Regular.26a30a5f1103393aac70.woff2",
+    "static/media/Chat-screenshot.png": "/Sibusky/chat-for-lonely-souls/static/media/Chat-screenshot.9201c9f5cf2e4ef35674.png",
+    "static/media/send-message-btn.png": "/Sibusky/chat-for-lonely-souls/static/media/send-message-btn.c61654823080eecc2400.png",
+    "index.html": "/Sibusky/chat-for-lonely-souls/index.html",
+    "static/media/arrow-link.svg": "/Sibusky/chat-for-lonely-souls/static/media/arrow-link.093d837f03fdca8fb146.svg",
+    "main.38615a14.css.map": "/Sibusky/chat-for-lonely-souls/static/css/main.38615a14.css.map",
+    "main.41f10e25.js.map": "/Sibusky/chat-for-lonely-souls/static/js/main.41f10e25.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38615a14.css",
+    "static/js/main.41f10e25.js"
+  ]
+}
